@@ -14,6 +14,5 @@ string triangleToString(Triangle t);
 float getPerimeter(Triangle t);
 float getSquare(Triangle t);
 bool equalityTriangle(Triangle t1, Triangle t2);
-Triangle sortTriangles(Triangle arr[], int SIZE);
+void sortTriangles(Triangle arr[], int SIZE);
 void swapTriangles(Triangle* x, Triangle* y);
-void printTriangles(Triangle arr[], int SIZE);

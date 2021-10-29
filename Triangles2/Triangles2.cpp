@@ -50,7 +50,4 @@ void test1()
     }
     cout << "Количество пар равных треугольников = " << count << endl;
     sortTriangles(arr, n);
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << endl;
-    }
 }

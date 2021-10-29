@@ -39,23 +39,36 @@ bool equalityTriangle(Triangle t1, Triangle t2)
 		return false;
 }
 
-Triangle sortTriangles(Triangle arr[], int SIZE)
+void sortTriangles(Triangle arr[], int SIZE)
 {
 	cout << "Выберите метод сортировки: 1 - по периметру, 2 - по площади" << endl;
 	int x;
 	cin >> x;
-	Triangle* arrNew = new Triangle[SIZE];
 	if (x == 1) {
 		for (int i = 0; i < SIZE; i++) {
 			for (int j = 0; j < SIZE - 1; j++) {
-				if (getPerimeter(arrNew[j]) > getPerimeter(arrNew[j + 1])) {
-					swapTriangles(&arrNew[j], &arrNew[j + 1]);
+				if (getPerimeter(arr[j]) > getPerimeter(arr[j + 1])) {
+					swapTriangles(&arr[j], &arr[j + 1]);
 				}
 			}
 		}
-		return *arrNew;
+		for (int i = 0; i < SIZE; i++) {
+			cout << "Периметр " << i << " треугольника = " << getPerimeter(arr[i]) << endl;
+		}
 	}
-	delete[] arrNew;
+	if (x == 2) {
+		for (int i = 0; i < SIZE; i++) {
+			for (int j = 0; j < SIZE - 1; j++) {
+				if (getSquare(arr[j]) > getSquare(arr[j + 1])) {
+					swapTriangles(&arr[j], &arr[j + 1]);
+				}
+			}
+		}
+		for (int i = 0; i < SIZE; i++) {
+			cout << "Площадь " << i << " треугольника = " << getSquare(arr[i]) << endl;
+		}
+	}
+	
 }
 
 void swapTriangles(Triangle* x, Triangle* y)
@@ -63,11 +76,4 @@ void swapTriangles(Triangle* x, Triangle* y)
 	Triangle t = *x;
 	*x = *y;
 	*y = t;
-}
-
-void printTriangles(Triangle arr[], int SIZE)
-{
-	for (int i = 0; i < SIZE; i++) {
-		cout << "Элемент массива [" << i << "] равен = " << &arr[i] << endl;
-	}
 }
