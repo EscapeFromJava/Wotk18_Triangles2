@@ -1,8 +1,8 @@
-#include "Triangle.h"
+п»ї#include "Triangle.h"
 
 Triangle inputTriangle()
 {
-	cout << "Введите 3 стороны треугольника: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ 3 СЃС‚РѕСЂРѕРЅС‹ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°: " << endl;
 	Triangle t;
 	cin >> t.a >> t.b >> t.c;
 	return t;
@@ -10,7 +10,7 @@ Triangle inputTriangle()
 
 string triangleToString(Triangle t)
 {
-	string s = "Треугольник {"+to_string(t.a)+ ", "+to_string(t.b)+ ", "+to_string(t.c)+" }";
+	string s = "РўСЂРµСѓРіРѕР»СЊРЅРёРє {"+to_string(t.a)+ ", "+to_string(t.b)+ ", "+to_string(t.c)+" }";
 	return s;
 }
 
@@ -41,7 +41,7 @@ bool equalityTriangle(Triangle t1, Triangle t2)
 
 Triangle sortTriangles(Triangle arr[], int SIZE)
 {
-	cout << "Выберите метод сортировки: 1 - по периметру, 2 - по площади" << endl;
+	cout << "Р’С‹Р±РµСЂРёС‚Рµ РјРµС‚РѕРґ СЃРѕСЂС‚РёСЂРѕРІРєРё: 1 - РїРѕ РїРµСЂРёРјРµС‚СЂСѓ, 2 - РїРѕ РїР»РѕС‰Р°РґРё" << endl;
 	int x;
 	cin >> x;
 	Triangle* arrNew = new Triangle[SIZE];
@@ -68,6 +68,6 @@ void swapTriangles(Triangle* x, Triangle* y)
 void printTriangles(Triangle arr[], int SIZE)
 {
 	for (int i = 0; i < SIZE; i++) {
-		cout << "Элемент массива [" << i << "] равен = " << &arr[i] << endl;
+		cout << "Р­Р»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° [" << i << "] СЂР°РІРµРЅ = " << &arr[i] << endl;
 	}
 }
